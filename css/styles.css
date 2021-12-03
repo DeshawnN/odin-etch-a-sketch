@@ -2,10 +2,12 @@
     --columns: 0;
     --rows: 0;
     display: grid;
-    grid-template-columns: repeat(var(--rows), 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    gap: 0;
 }
 
 .grid-item {
+    --initial-color: lightgray;
     height: 20px;
+    background-color: var(--initial-color);
 }
