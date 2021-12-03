@@ -9,7 +9,3 @@
 .grid-item {
     height: 20px;
 }
-
-.grid-item:hover {
-    background-color: lightblue;
-}
