@@ -1,0 +1,15 @@
+.grid-container {
+    --columns: 0;
+    --rows: 0;
+    display: grid;
+    grid-template-columns: repeat(var(--rows), 1fr);
+    gap: 10px;
+}
+
+.grid-item {
+    height: 20px;
+}
+
+.grid-item:hover {
+    background-color: lightblue;
+}
