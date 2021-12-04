@@ -1,8 +1,12 @@
 .grid-container {
+    width: 960px;
+    height: 540px;
+    margin: 0 auto;
     --columns: 0;
     --rows: 0;
     display: grid;
     grid-template-columns: repeat(var(--columns), 1fr);
+    grid-template-rows: repeat(var(--rows), 1fr);
     gap: 0;
 }
 

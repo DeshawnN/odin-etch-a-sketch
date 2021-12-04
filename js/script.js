@@ -5,7 +5,7 @@ function initializer() {
 
     resetButton.addEventListener('click', resetGrid);
 
-    makeGrid(16, 16);
+    makeGrid(64, 64);
 }
 
 function makeGrid(width, height) {
@@ -30,24 +30,26 @@ function addHoverEvents() {
     
     gridItems.forEach(item => {
         item.addEventListener('mouseover', event => {
-            event.target.style.backgroundColor = "lightblue";
+            event.target.style.backgroundColor = generateRGBColor();
         });
-
-        item.addEventListener('mouseleave', event => {
-            event.target.style.backgroundColor = item.style.getPropertyValue('--intial-color');
-        })
     });
 }
 
 function resetGrid() {
-    const dimensions = prompt("Grid Dimensions: (format: WxH, so 16x16 for a 16 by 16 grid)", '16x16');
-    const columns = dimensions.split("x")[0];
-    const rows = dimensions.split("x")[1];
+    const dimensions = +prompt("Grid Dimensions:", 64);
 
-    if (columns > 100 || rows > 100) {
+    if (dimensions > 100) {
         alert("Please try again with a number smaller than 100");
         return;
     }
 
-    makeGrid(rows, columns);
+    makeGrid(dimensions, dimensions);
+}
+
+function generateRGBColor() {
+    const red = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+
+    return `rgb(${red}, ${green}, ${blue})`;
 }
